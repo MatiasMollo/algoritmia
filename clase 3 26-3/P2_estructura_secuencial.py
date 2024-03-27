@@ -1,0 +1,1 @@
+n = input("Ingrese un número entero: ") 
