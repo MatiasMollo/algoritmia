@@ -1,0 +1,7 @@
+1. Inicio algoritmo
+2. Leer medida en metros
+3. Centimetros = metros multiplicado por 100
+4. Pulgadas = centimetros dividido 2.54
+5. Pies = pulgadas dividido 12
+6. Yardas = pies dividido 3
+7. Mostrar todas las unidades de medida

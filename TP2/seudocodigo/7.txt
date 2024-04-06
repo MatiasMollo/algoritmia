@@ -1,0 +1,4 @@
+1. Inicio algoritmo
+2. Leer monto
+3. dinero_futuro = monto multiplicado por el interes (1.02) elevado a la cantidad de meses
+4. Mostrar "El dinero dentro de 6 meses será $" dinero_futuro 

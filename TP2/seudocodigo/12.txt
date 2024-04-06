@@ -1,0 +1,9 @@
+1. Inicio algoritmo
+2. Leer importe
+3. Evaluamos la division absoluta del importe con la denominacion del billete ordenados de mayor a menor
+4. En caso que la condición sea verdadera se suma la division absoluta a la variable del billete
+    Descontamos del importe total la division absoluta entre el importe y la denominación del billete 
+    Multiplicamos la division absoluta entre el importe y la denominacion por la denominacion del billete
+    Seguimos con el siguiente billete de menor denominacion 
+5. Si la condicion es falsa evaluamos la siguiente denominación
+6. Mostrar la cantidad de billetes utilizados
