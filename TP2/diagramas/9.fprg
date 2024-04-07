@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Matias"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-04-06 11:05:52 p. m."/>
+        <attribute name="created" value="TWF0aWFzO0xBUFRPUC0xTkVGSlFHQjsyMDI0LTA0LTA2OzEwOjQ3OjA3IHAuIG0uOzMxNDM="/>
+        <attribute name="edited" value="TWF0aWFzO0xBUFRPUC0xTkVGSlFHQjsyMDI0LTA0LTA2OzExOjA1OjUyIHAuIG0uOzE7MzI0Ng=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Ingrese la cantidad de vendedores&quot;" newline="True"/>
+            <input variable="cantidadVendedores"/>
+            <declare name="vendedores" type="Integer" array="True" size="cantidadVendedores"/>
+            <declare name="sueldoBase" type="Integer" array="False" size=""/>
+            <assign variable="sueldoBase" expression="250000"/>
+            <declare name="comisionPorVenta" type="Integer" array="False" size=""/>
+            <assign variable="comisionPorVenta" expression="5000"/>
+            <declare name="porcentaje" type="Integer" array="False" size=""/>
+            <assign variable="porcentaje" expression="5"/>
+            <for variable="vendedoresIndex" start="0" end="cantidadVendedores" direction="inc" step="1">
+                <input variable="cantidadVentas"/>
+                <declare name="ventas" type="Integer" array="True" size="cantidadVentas"/>
+                <for variable="ventaIndex" start="0" end="cantidadVentas" direction="inc" step="1">
+                    <input variable="valorVenta"/>
+                    <assign variable="ventas" expression="valorVenta"/>
+                </for>
+                <assign variable="vendedores" expression="ventas"/>
+            </for>
+            <for variable="vendedor" start="0" end="vendedores" direction="inc" step="1">
+                <declare name="sueldo" type="Real" array="False" size=""/>
+                <assign variable="sueldo" expression="sueldoBase"/>
+                <for variable="venta" start="0" end="vendedor" direction="inc" step="1">
+                    <assign variable="sueldo" expression="sueldo + venta * (porcentaje/100)"/>
+                </for>
+                <output expression="&quot;El sueldo del vendedor N&#176;... es &quot; + sueldo" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

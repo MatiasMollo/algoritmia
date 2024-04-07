@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Matias"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-04-06 10:46:56 p. m."/>
+        <attribute name="created" value="TWF0aWFzO0xBUFRPUC0xTkVGSlFHQjsyMDI0LTA0LTA2OzEwOjQyOjIwIHAuIG0uOzMxMzM="/>
+        <attribute name="edited" value="TWF0aWFzO0xBUFRPUC0xTkVGSlFHQjsyMDI0LTA0LTA2OzEwOjQ2OjU2IHAuIG0uOzE7MzI1NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Ingrese una medida en metros&quot;" newline="True"/>
+            <input variable="medida"/>
+            <declare name="centimetros" type="Real" array="False" size=""/>
+            <assign variable="centimetros" expression="medida*100"/>
+            <declare name="pulgadas" type="Real" array="False" size=""/>
+            <assign variable="pulgadas" expression="centimetros/2.54"/>
+            <declare name="pies" type="Real" array="False" size=""/>
+            <assign variable="pies" expression="pulgadas/12"/>
+            <declare name="yardas" type="Real" array="False" size=""/>
+            <assign variable="yardas" expression="pies/3"/>
+            <output expression="&quot;Las medidas son...&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

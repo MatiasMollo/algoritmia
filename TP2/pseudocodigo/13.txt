@@ -1,0 +1,7 @@
+1. Inicio algoritmo
+2. Leer numero en binario
+3. Inicializar decimal = 0
+4. Evaluamos si la longitud es igual a 4
+    5. Recorrer el array en un bucle invirtiendo la cadena de texto
+    6. Decimal += numero multiplicado por 2 elevado a la posicion de la letra en el string
+    7. Mostrar "El numero ingresado es: " numero

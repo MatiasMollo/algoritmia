@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Matias"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-04-06 11:13:06 p. m."/>
+        <attribute name="created" value="TWF0aWFzO0xBUFRPUC0xTkVGSlFHQjsyMDI0LTA0LTA2OzExOjA2OjQ2IHAuIG0uOzMxNDI="/>
+        <attribute name="edited" value="TWF0aWFzO0xBUFRPUC0xTkVGSlFHQjsyMDI0LTA0LTA2OzExOjEzOjA2IHAuIG0uOzE7MzI0NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Ingrese el importe a retirar sin decimales&quot;" newline="True"/>
+            <input variable="importe"/>
+            <declare name="mil" type="Integer" array="False" size=""/>
+            <declare name="quinientos" type="Integer" array="False" size=""/>
+            <declare name="cien" type="Integer" array="False" size=""/>
+            <declare name="cincuenta" type="Integer" array="False" size=""/>
+            <declare name="diez" type="Integer" array="False" size=""/>
+            <declare name="cinco" type="Integer" array="False" size=""/>
+            <declare name="uno" type="Integer" array="False" size=""/>
+            <assign variable="mil" expression="0"/>
+            <assign variable="quinientos" expression="0"/>
+            <assign variable="cien" expression="0"/>
+            <assign variable="cincuenta" expression="0"/>
+            <assign variable="diez" expression="0"/>
+            <assign variable="cinco" expression="0"/>
+            <assign variable="uno" expression="0"/>
+            <if expression="importe//1000 &gt; 0">
+                <then>
+                    <assign variable="mil" expression="mil + importe//1000"/>
+                    <assign variable="importe" expression="importe - (importe//1000)*1000"/>
+                </then>
+                <else/>
+            </if>
+            <comment text="Mismo proceso para el resto de variables"/>
+        </body>
+    </function>
+</flowgorithm>

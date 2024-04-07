@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Matias"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-04-06 10:42:01 p. m."/>
+        <attribute name="created" value="TWF0aWFzO0xBUFRPUC0xTkVGSlFHQjsyMDI0LTA0LTA2OzEwOjM1OjAxIHAuIG0uOzMxMzQ="/>
+        <attribute name="edited" value="TWF0aWFzO0xBUFRPUC0xTkVGSlFHQjsyMDI0LTA0LTA2OzEwOjQyOjAxIHAuIG0uOzE7MzI0MA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Ingrese el monto a calcular&quot;" newline="True"/>
+            <input variable="Monto"/>
+            <declare name="interesMensual" type="Real" array="False" size=""/>
+            <assign variable="interesMensual" expression="2"/>
+            <declare name="meses" type="Integer" array="False" size=""/>
+            <assign variable="meses" expression="6"/>
+            <declare name="dineroFuturo" type="Real" array="False" size=""/>
+            <assign variable="dineroFuturo" expression="monto*((1 + interesMensual/100)*meses)"/>
+            <output expression="monto" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

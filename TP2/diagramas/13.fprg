@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Matias"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-04-06 11:18:00 p. m."/>
+        <attribute name="created" value="TWF0aWFzO0xBUFRPUC0xTkVGSlFHQjsyMDI0LTA0LTA2OzExOjEzOjU1IHAuIG0uOzMxNDA="/>
+        <attribute name="edited" value="TWF0aWFzO0xBUFRPUC0xTkVGSlFHQjsyMDI0LTA0LTA2OzExOjE4OjAwIHAuIG0uOzE7MzI0Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Ingrese el binario de 4 digitos&quot;" newline="True"/>
+            <input variable="binario"/>
+            <declare name="decimal" type="Integer" array="False" size=""/>
+            <assign variable="decimal" expression="0"/>
+            <if expression="len(binario) == 4">
+                <then>
+                    <for variable="numero" start="0" end="binario" direction="inc" step="1">
+                        <assign variable="decimal" expression="decimal + binario[numero]*(2**numero)"/>
+                    </for>
+                    <output expression="&quot;El numero ingresado es: &quot; + decimal" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;El n&#250;mero ingresado tiene mas de 4 digitos&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
