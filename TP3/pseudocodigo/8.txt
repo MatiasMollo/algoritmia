@@ -1,0 +1,6 @@
+1. Inicio algoritmo
+2. Leer year
+3. Evaluar si se puede dividir por 4. 
+    Caso afirmativo: evaluar si no puede dividirse por 100 o puede dividirse por 100 y 400 a la vez
+        Caso afirmativo: Mostrar "El año es bisiesto"
+    Caso contrario Mostrar "El año no es bisiesto"

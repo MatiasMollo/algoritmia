@@ -1,0 +1,9 @@
+1. Inicio algoritmo
+2. Leer presentes
+3. Leer votos a favos
+4. Leer votos en contra
+5. abstenciones = presentes - (favor + contra)
+6. Evaluar si los votos a favor son mayores que los presentes dividido 2
+    Caso afirmativo: Mostrar "Ley aprobada"
+    Caso contrario: Mostrar "Ley no aprobada"
+7. Mostrar porcentaje de votos

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Matias"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-04-07 01:28:57 p. m."/>
+        <attribute name="created" value="TWF0aWFzO0xBUFRPUC0xTkVGSlFHQjsyMDI0LTA0LTA3OzAxOjI2OjQyIHAuIG0uOzMxNDA="/>
+        <attribute name="edited" value="TWF0aWFzO0xBUFRPUC0xTkVGSlFHQjsyMDI0LTA0LTA3OzAxOjI4OjU3IHAuIG0uOzE7MzI1Ng=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Ingrese el a&#241;o&quot;" newline="True"/>
+            <input variable="year"/>
+            <if expression="year%4 == 0 or (year%100!=0 or (year%100 == 0 and year%400 == 0))">
+                <then>
+                    <output expression="&quot;El a&#241;o es bisiesto&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;El a&#241;o no es bisiesto&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Matias"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-04-07 01:26:35 p. m."/>
+        <attribute name="created" value="TWF0aWFzO0xBUFRPUC0xTkVGSlFHQjsyMDI0LTA0LTA3OzAxOjI0OjA4IHAuIG0uOzMxNDA="/>
+        <attribute name="edited" value="TWF0aWFzO0xBUFRPUC0xTkVGSlFHQjsyMDI0LTA0LTA3OzAxOjI2OjM1IHAuIG0uOzE7MzI1MA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Ingrese el n&#250;mero de p&#225;ginas&quot;" newline="True"/>
+            <input variable="paginas"/>
+            <declare name="valor" type="Integer" array="False" size=""/>
+            <assign variable="valor" expression="5000 + paginas*32"/>
+            <if expression="paginas &gt;= 300">
+                <then>
+                    <assign variable="valor" expression="valor + 1200"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="paginas &gt;= 600">
+                <then>
+                    <assign variable="valor" expression="valor + 3360"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="&quot;El valor del libro es: &quot; + valor" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

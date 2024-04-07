@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Matias"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-04-07 01:23:48 p. m."/>
+        <attribute name="created" value="TWF0aWFzO0xBUFRPUC0xTkVGSlFHQjsyMDI0LTA0LTA3OzAxOjEzOjQzIHAuIG0uOzMxMzc="/>
+        <attribute name="edited" value="TWF0aWFzO0xBUFRPUC0xTkVGSlFHQjsyMDI0LTA0LTA3OzAxOjIzOjQ4IHAuIG0uOzE7MzI1MQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Ingrese la cantidad de diputados presentes&quot;" newline="True"/>
+            <input variable="presentes"/>
+            <output expression="&quot;Ingrese la cantidad de votos a favor&quot;" newline="True"/>
+            <input variable="favor"/>
+            <output expression="&quot;Ingrese la cantidad de votos en contra&quot;" newline="True"/>
+            <input variable="contra"/>
+            <declare name="abstenciones" type="Integer" array="False" size=""/>
+            <assign variable="abstenciones" expression="presentes - (favor + contra)"/>
+            <declare name="aprobado" type="Integer" array="False" size=""/>
+            <assign variable="aprobado" expression="False"/>
+            <if expression="favor &gt; presentes or contra &gt; presentes or abstenciones &gt; presentes">
+                <then>
+                    <output expression="&quot;Incoherencia en los datos. Intente nuevamente&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="favor &gt; presentes">
+                        <then>
+                            <output expression="&quot;Ley aprobada&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Ley no aprobada&quot;" newline="True"/>
+                        </else>
+                    </if>
+                    <declare name="porcentajeFavor" type="Real" array="False" size=""/>
+                    <declare name="porcentajeContra" type="Real" array="False" size=""/>
+                    <declare name="porcentajeAbstenciones" type="Real" array="False" size=""/>
+                    <assign variable="porcentajeFavor" expression="favor*100/presentes"/>
+                    <assign variable="porcentajeContra" expression="contra*100/presentes"/>
+                    <assign variable="porcentajeAbstenciones" expression="abstenciones*100/presentes"/>
+                    <output expression="&quot;Los porcentajes son los siguientes...&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,6 @@
+1. Inicio algoritmo
+2. Leer paginas
+3. valor = 5000 + paginas*32
+4. Evaluar si el libro supera las 300 páginas, caso afirmativo: valor += 1200
+5. Evaluar si el libro supera las 600 páginas, caso afirmativo: valor += 3360
+6. Mostrar "El valor del libro es:" + valor

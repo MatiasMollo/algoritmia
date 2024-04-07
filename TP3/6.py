@@ -7,7 +7,7 @@ Si supera las 600 páginas se incrementa el costo en otros $3360
 Calcular el costo en base al numero de páginas
 '''
 
-paginas = float(input("Ingrese el número de páginas: "))
+paginas = int(input("Ingrese el número de páginas: "))
 
 valor = 5000 + paginas*32
 

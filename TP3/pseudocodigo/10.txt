@@ -1,0 +1,12 @@
+1. Inicio algoritmo
+2. Leer basico
+3. Leer old (antigüedad)
+4. Leer estado
+5. sueldo = 0
+6. Evaluar si el estado es 1
+    Caso afirmativo: sueldo = basico * (5% de aumento elevado a la antigüedad)
+    Caso contrario: evaluar si el estado es igual a 2
+        Caso afirmativo: sueldo = basico * (7% de aumento elevado a la antigüedad)
+7. jubilacion = sueldo * 0.11
+8. obra_social = sindicato = sueldo*0.03
+9: Mostrar sueldo, importes jubilatorios, obra_social, etc.
