@@ -1,5 +1,5 @@
 '''
-Leer una medida en metros e imprimirla en centimetros, pulgadas, pied y yardas
+Leer una medida en metros e imprimirla en centimetros, pulgadas, pies y yardas
 '''
 
 metros = float(input("Ingrese la medida en metros: "))
