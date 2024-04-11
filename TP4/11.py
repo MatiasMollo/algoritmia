@@ -6,11 +6,10 @@ numero = int(input("Ingrese el numero: "))
 index = 2
 primo = True
 
-while numero > index:
+while numero > index and primo:
     if numero%index == 0:
-        print(index)
-        primo = False
-        break
+        primo = False #Importante no usar breaks
+
     index += 1
 
 if numero > 0:
