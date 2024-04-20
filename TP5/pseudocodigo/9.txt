@@ -1,0 +1,17 @@
+Inicio algoritmo
+leer numero
+contador = 0
+suma = 1
+mientras contador sea igual a 0
+    Si el numero es mayor a 0
+        contador = 1
+        mientras contador+1 sea menor a numero
+            imprimir contador
+            contador = contador + 2
+            suma = suma + contador
+        Si el número es impar
+            imprimir numero
+    Sino
+        imprimir "El número ingresado no es válido, intente nuevamente"
+imprimir suma
+Fin algoritmo

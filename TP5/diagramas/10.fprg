@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Matias"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-04-20 07:08:37 p. m."/>
+        <attribute name="created" value="TWF0aWFzO0xBUFRPUC0xTkVGSlFHQjsyMDI0LTA0LTIwOzA2OjUzOjAyIHAuIG0uOzMxMzY="/>
+        <attribute name="edited" value="TWF0aWFzO0xBUFRPUC0xTkVGSlFHQjsyMDI0LTA0LTIwOzA3OjA4OjM3IHAuIG0uOzE7MzI1Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Ingrese el valor de la entrada&quot;" newline="True"/>
+            <input variable="ENTRADA"/>
+            <output expression="&quot;Ingrese el valor de la entrada con descuento&quot;" newline="True"/>
+            <input variable="ENTRADA_DESC"/>
+            <output expression="&quot;Ingrese el n&#250;mero de espectadores&quot;" newline="True"/>
+            <input variable="espectadores"/>
+            <declare name="recaudacion" type="Real" array="False" size=""/>
+            <declare name="cantEspectadores" type="Integer" array="False" size=""/>
+            <declare name="cantEspectadoresDesc" type="Integer" array="False" size=""/>
+            <assign variable="recaudacion" expression="0"/>
+            <assign variable="cantEspectadores" expression="0"/>
+            <assign variable="cantEspectadoresDesc" expression="0"/>
+            <declare name="descuendo" type="Integer" array="False" size=""/>
+            <while expression="espectadores &gt; 0">
+                <output expression="&quot;Ingrese 1 si la entrada tiene descuento, caso contrario ingrese 2&quot;" newline="True"/>
+                <input variable="descuento"/>
+                <if expression="descuento == 1">
+                    <then>
+                        <assign variable="cantEspectadoresDesc" expression="cantEspectadores + espectadores"/>
+                        <assign variable="recaudacion" expression="recaudacion + (espectadores*ENTRADA_DESC)"/>
+                    </then>
+                    <else>
+                        <if expression="descuento == 2">
+                            <then>
+                                <assign variable="cantEspectadores" expression="cantEspectadores + espectadores"/>
+                                <assign variable="recaudacion" expression="recaudacion + espectadores*ENTRADA"/>
+                            </then>
+                            <else>
+                                <output expression="&quot;Operaci&#243;n inv&#225;lida, intente nuevamente.&quot;" newline="True"/>
+                            </else>
+                        </if>
+                        <output expression="&quot;Ingrese la cantidad de espectadores&quot;" newline="True"/>
+                        <input variable="espectadores"/>
+                    </else>
+                </if>
+            </while>
+            <declare name="porcentajeEspectadoresDesc" type="Real" array="False" size=""/>
+            <if expression="cantEspectadores &gt; 0 or cantEspectadoresDesc &gt; 0">
+                <then>
+                    <assign variable="porcentajeEspectadoresDesc" expression="cantEspectadoresDesc * 100 / (cantEspectadoresDesc + cantEspectadores)"/>
+                </then>
+                <else>
+                    <assign variable="porcentajeEspectadoresDesc" expression="0"/>
+                </else>
+            </if>
+            <output expression="recaudacion" newline="True"/>
+            <output expression="cantEspectadoresDesc" newline="True"/>
+            <output expression="porcentajeEspectadoresDesc" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

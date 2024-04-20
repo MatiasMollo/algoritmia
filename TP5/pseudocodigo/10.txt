@@ -1,0 +1,33 @@
+Inicio algoritmo
+Imprimir "Ingrese el valor de la entrada"
+Leer ENTRADA
+Imprimir "Ingrese el valor de la entrada con descuento"
+Leer ENTRADA_DESC
+Imprimir "Ingrese el número de espectadores: "
+Leer espectadores
+
+recaudacion = 0
+cant_espectadores = 0
+cant_espectadores_desc = 0
+
+Mientras espectadores sea mayor a 0
+    Leer descuento
+    Si descuento es igual a 1
+        cant_espectadores_desc += espectadores
+        recaudacion += espectadores*ENTRADA_DESC
+    Sino Si descuento es igual a 2
+        cant_espectadores += espectadores
+        recaudacion += espectadores*ENTRADA
+    Sino
+        Imprimir "Operación inválida, intente nuevamente"
+    
+    Leer espectadores
+
+Si cant_espectadores es mayor a 0, o cant_espectadores_desc es mayor a 0
+    porcentaje_espectadores_desc = cant_espectadores_desc * 100 / (cant_espectadores + cant_espectadores_desc)
+Sino
+    porcentaje_espectadores_desc = 0
+
+Imprimir recaudacion
+Imprimir cant_espectadores_desc
+Imprimir porcentaje_espectadores_desc

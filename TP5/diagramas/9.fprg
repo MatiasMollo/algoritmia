@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Matias"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-04-20 06:37:30 p. m."/>
+        <attribute name="created" value="TWF0aWFzO0xBUFRPUC0xTkVGSlFHQjsyMDI0LTA0LTIwOzA2OjI2OjI5IHAuIG0uOzMxNDU="/>
+        <attribute name="edited" value="TWF0aWFzO0xBUFRPUC0xTkVGSlFHQjsyMDI0LTA0LTIwOzA2OjM3OjMwIHAuIG0uOzM7MzI0OQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <input variable="Numero"/>
+            <declare name="Contador" type="Integer" array="False" size=""/>
+            <assign variable="Contador" expression="0"/>
+            <declare name="Suma" type="Integer" array="False" size=""/>
+            <assign variable="Suma" expression="1"/>
+            <while expression="Contador == 0">
+                <if expression="Numero &gt; 0">
+                    <then>
+                        <assign variable="Contador" expression="1"/>
+                        <while expression="Contador+1 &lt; Numero">
+                            <output expression="&quot;Impares: &quot; + contador" newline="True"/>
+                            <assign variable="Contador" expression="Contador + 2"/>
+                            <assign variable="Suma" expression="Suma + Contador"/>
+                        </while>
+                        <if expression="Numero % 2 == 1">
+                            <then>
+                                <output expression="&quot;Impares: &quot; + Numero" newline="True"/>
+                            </then>
+                            <else/>
+                        </if>
+                    </then>
+                    <else>
+                        <output expression="&quot;El n&#250;mero ingresado no es v&#225;lido, intente nuevamente&quot;" newline="True"/>
+                        <input variable="Numero"/>
+                    </else>
+                </if>
+            </while>
+            <output expression="&quot;Suma: &quot; + Suma" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
