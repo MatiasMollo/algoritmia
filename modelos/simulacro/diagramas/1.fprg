@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Matias"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-04-24 07:23:00 p. m."/>
+        <attribute name="created" value="TWF0aWFzO0xBUFRPUC0xTkVGSlFHQjsyMDI0LTA0LTI0OzA3OjE4OjQ2IHAuIG0uOzMxNTA="/>
+        <attribute name="edited" value="TWF0aWFzO0xBUFRPUC0xTkVGSlFHQjsyMDI0LTA0LTI0OzA3OjIzOjAwIHAuIG0uOzE7MzI0NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="limite" type="Integer" array="False" size=""/>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <declare name="acumulador" type="Real" array="False" size=""/>
+            <declare name="num" type="Real" array="False" size=""/>
+            <assign variable="limite" expression="10"/>
+            <assign variable="contador" expression="0"/>
+            <assign variable="acumulador" expression="0"/>
+            <declare name="promedio" type="Real" array="False" size=""/>
+            <while expression="contador &lt; limite">
+                <input variable="num"/>
+                <assign variable="contador" expression="contador + 1"/>
+                <assign variable="acumulador" expression="acumulador + numero"/>
+            </while>
+            <assign variable="promedio" expression="acumulador / limite"/>
+            <output expression="&quot;El promedio es: &quot; + promedio" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
