@@ -1,0 +1,10 @@
+Inicio algoritmo
+    Leer numero
+    contador = 0
+    Si el numero es menor que cero
+        multiplicar numero por -1
+    Mientras numero sea distinto de cero
+        contador = contador + 1
+        numero = numero // 10
+    Imprimir "La cantidad de digitos es: " + contador
+Fin algoritmo

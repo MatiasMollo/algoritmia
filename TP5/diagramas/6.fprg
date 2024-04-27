@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Matias"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-04-27 11:01:28 a.&#160;m."/>
+        <attribute name="created" value="TWF0aWFzO0RFU0tUT1AtNEcwQjc4STsyMDI0LTA0LTI3OzEwOjU1OjE5IGEuwqBtLjszMTk4"/>
+        <attribute name="edited" value="TWF0aWFzO0RFU0tUT1AtNEcwQjc4STsyMDI0LTA0LTI3OzExOjAxOjI4IGEuwqBtLjsxOzMyOTg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="num" type="Integer" array="False" size=""/>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <input variable="num"/>
+            <assign variable="contador" expression="0"/>
+            <if expression="num &lt; 0">
+                <then>
+                    <assign variable="num" expression="num * -1"/>
+                </then>
+                <else/>
+            </if>
+            <while expression="num != 0">
+                <assign variable="contador" expression="contador + 1"/>
+                <assign variable="num" expression="num // 10"/>
+            </while>
+            <output expression="&quot;El n&#250;mero tiene&quot; + contador + &quot;digitos&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

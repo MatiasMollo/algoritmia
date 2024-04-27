@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Matias"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-04-27 12:19:33 p.&#160;m."/>
+        <attribute name="created" value="TWF0aWFzO0RFU0tUT1AtNEcwQjc4STsyMDI0LTA0LTI3OzExOjU3OjA5IGEuwqBtLjszMjAw"/>
+        <attribute name="edited" value="TWF0aWFzO0RFU0tUT1AtNEcwQjc4STsyMDI0LTA0LTI3OzEyOjE5OjMzIHAuwqBtLjsxOzMzMTk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="d" type="Integer" array="False" size=""/>
+            <declare name="m" type="Integer" array="False" size=""/>
+            <declare name="d" type="Integer" array="False" size=""/>
+            <declare name="contador" type="Integer" array="False" size=""/>
+            <assign variable="contador" expression="0"/>
+            <declare name="bisiesto" type="Boolean" array="False" size=""/>
+            <assign variable="bisiesto" expression="False"/>
+            <input variable="d"/>
+            <declare name="validaciones" type="Boolean" array="False" size=""/>
+            <declare name="d31" type="Boolean" array="False" size=""/>
+            <declare name="d30" type="Boolean" array="False" size=""/>
+            <declare name="num" type="Integer" array="False" size=""/>
+            <declare name="dias" type="Integer" array="False" size=""/>
+            <while expression="d &gt; 0 and contador == 0">
+                <input variable="m"/>
+                <input variable="a"/>
+                <if expression="a%4 == 0 or (a%100!=0 or (a%100==0 and a%400==0))">
+                    <then>
+                        <assign variable="bisiesto" expression="True"/>
+                    </then>
+                    <else/>
+                </if>
+                <assign variable="validaciones" expression="(bisiesto and m == 2 and d &lt;= 29) or (not bisiesto and m == 2 and d &lt;= 28)"/>
+                <assign variable="d31" expression="(m == 1 or m == 3 or m == 5 or m == 7 or m == 8 or m == 10 or m == 12)"/>
+                <assign variable="d30" expression="(m == 4 or m == 6 or m == 9 or m == 11)"/>
+                <assign variable="validaciones" expression="validaciones and ((d31 and d &lt;= 31) or (d30 and d&lt;= 30) or m == 2)"/>
+                <if expression="validaciones">
+                    <then>
+                        <assign variable="contador" expression="contador + 1"/>
+                        <input variable="num"/>
+                        <if expression="m == 2">
+                            <then>
+                                <if expression="bisiesto">
+                                    <then>
+                                        <assign variable="dias" expression="29"/>
+                                    </then>
+                                    <else>
+                                        <assign variable="dias" expression="28"/>
+                                    </else>
+                                </if>
+                            </then>
+                            <else>
+                                <if expression="d31">
+                                    <then>
+                                        <assign variable="dias" expression="31"/>
+                                    </then>
+                                    <else>
+                                        <assign variable="dias" expression="30"/>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                        <assign variable="d" expression="d + num"/>
+                        <while expression="d &gt; dias">
+                            <assign variable="d" expression="d - dias"/>
+                            <assign variable="m" expression="m + 1"/>
+                            <if expression="m &gt; 12">
+                                <then>
+                                    <assign variable="m" expression="1"/>
+                                    <assign variable="a" expression="a + 1"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </while>
+                    </then>
+                    <else>
+                        <output expression="&quot;Datos incorrectos, intente nuevamente.&quot;" newline="True"/>
+                        <input variable="d"/>
+                    </else>
+                </if>
+            </while>
+            <if expression="contador &gt; 0">
+                <then>
+                    <output expression="&quot;La nueva fecha es...&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;No se han ingresado fechas&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
