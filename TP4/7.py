@@ -13,7 +13,7 @@ promedio = 0
 while contador <= LIMITE:
     num = int(input("Ingrese un número: "))
 
-    if contador == 0:
+    if contador == 1:
         mayor = num
         posicion = contador
     elif mayor < num:
