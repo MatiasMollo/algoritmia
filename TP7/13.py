@@ -26,7 +26,7 @@ def orderList(array):
                 array[x] = aux
     return array
 
-def mix(M,N):
+def mix(M,N): #Al intercalar, no se debe hacer de uno en uno, si no recorrer los arrays y verificar cual corresponde poner y agregarlo
     array = []
     i = 0
     while i < (len(M) + len(N)):
