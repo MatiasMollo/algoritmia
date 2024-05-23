@@ -6,6 +6,7 @@ utilizar ningún método de ordenamiento en ella)
 def getList():
     leave = False
     array = []
+    print()
 
     while not leave:
         numero = int(input("Ingrese un número (0 para finalizar): "))
@@ -29,19 +30,24 @@ def orderList(array):
 def mix(M,N): #Al intercalar, no se debe hacer de uno en uno, si no recorrer los arrays y verificar cual corresponde poner y agregarlo
     array = []
     i = 0
-    while i < (len(M) + len(N)):
-        if i == 0 and i < len(M) and i < len(N):
-            if M[i] > N[i]:
-                array.append(N[i])
-            else:
-                array.append(M[i])
-        else:        
-            if i < len(M):
-                array.append(M[i])
-            if i < len(N):
-                array.append(N[i])
-        i += 1
+    x = 0
+
+    while i < len(M) and x < len(N):
+        if(M[i]  < N[x]):
+            array.append(M[i])
+            i += 1
+        else:
+            array.append(N[x])
+            x += 1
         
+    while i < len(M):
+        array.append(M[i])
+        i += 1
+
+    while x < len(N):
+        array.append(N[x])
+        x += 1
+
     return array
 
 
