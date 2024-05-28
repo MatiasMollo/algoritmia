@@ -4,7 +4,7 @@ e imprimir el valor mínimo y el lugar que ocupa.
 
 Tener en cuenta que el mínimo puede estar repetido (en ese caso deberán mostrarse todas las posiciones)
 
-La carga de datos termina cuando se carga 0 como número al azar, el cual no deberá cargare en la lista
+La carga de datos termina cuando se carga 0 como número al azar, el cual no deberá cargarse en la lista
 '''
 
 import random
@@ -22,7 +22,7 @@ def rellenar ():
 
 def buscarMinimo(lista):
     i = 0
-    while i < (len(lista) - 1):
+    while i < len(lista):
         if i == 0:
             minimo = lista[i]
         elif lista[i] < minimo:
@@ -44,4 +44,5 @@ lista = rellenar()
 minimo = buscarMinimo(lista)
 
 print("Lista:",lista)
-print("El número mínimo es",minimo,"y se encuentra en las posiciones ",buscarPosiciones(lista,minimo))
+posiciones = buscarPosiciones(lista,minimo)
+print("El número mínimo es",minimo,"y se encuentra en las posiciones ",posiciones)
