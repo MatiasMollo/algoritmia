@@ -20,8 +20,6 @@ def ordenarPorPuntaje(jugadores,items):
     original = jugadores
     aux = 0
 
-    print("Items:",items,"original:",original)
-
     while not ordenado:
         ordenado = True
         for i in range(len(items) - 1):
@@ -72,8 +70,6 @@ while continuar:
     print("Usted está jugando con un número de",DIGITOS,"digitos")
     aleatorio = random.randint(10**(DIGITOS-1),(10**DIGITOS)-1)
     numero = int(input("Se ha generado un número, intente adivinarlo o ingrese -1 para finalizar: "))
-
-    print("aleatorio:", aleatorio)
 
     while numero != -1 and not descubierto:
         intentos[indice] += 1
