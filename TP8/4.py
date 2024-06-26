@@ -13,32 +13,38 @@ Al finalizar el juego preguntar si se desea seguir jugando y reiniciarlo
 
 import random
 
+# Se necesita una funcion que copie la lista ya que Python devuelve la posición en memoria
+def copiarLista(lista):
+    array = []
+
+    for i in range(len(lista)):
+        array.append(lista[i])
+    
+    return array
+
 #Devuelve una lista con los indices en orden de mayor a menor puntaje
-def ordenarPorPuntaje(jugadores,items):
-    lista = []
+def ordenarPorPuntaje(items):
+    lista = copiarLista(items)
+    indices = []
     ordenado = False
-    original = jugadores
+    original = items
     aux = 0
 
     while not ordenado:
         ordenado = True
-        for i in range(len(items) - 1):
-            if(items[i] > items[i+1]):
-                aux = items[i]
-                items[i] = items[i+1]
-                items[i+1] = aux
-
-                aux = jugadores[i]
-                jugadores[i] = jugadores[i+1]
-                jugadores[i+1] = aux
+        for i in range(len(lista) - 1):
+            if(lista[i] > lista[i+1]):
+                aux = lista[i]
+                lista[i] = lista[i+1]
+                lista[i+1] = aux
                 ordenado = False
         
-    for i in range(len(jugadores)):
-        for x in range(len(jugadores)):
-            if original[x] == jugadores[i]:
-                lista.append(x)
+    for i in range(len(lista)):
+        for x in range(len(lista)):
+            if original[x] == lista[i]:
+                indices.append(x)
 
-    return lista
+    return indices
 
 #Devuelve los indices de los participantes que superan el record
 def superaRecord(record,intentos):
@@ -69,6 +75,8 @@ while continuar:
 
     print("Usted está jugando con un número de",DIGITOS,"digitos")
     aleatorio = random.randint(10**(DIGITOS-1),(10**DIGITOS)-1)
+
+    print(aleatorio) #! Debug (no forma parte del programa)
     numero = int(input("Se ha generado un número, intente adivinarlo o ingrese -1 para finalizar: "))
 
     while numero != -1 and not descubierto:
@@ -97,9 +105,7 @@ if len(jugadores) > 0:
     record = int(input("Ingrese la cantidad de intentos del record: "))
     mejores = superaRecord(record,intentos)
 
-    #! En este punto la variable intentos está desordenado
-    ordenados = ordenarPorPuntaje(jugadores,intentos)
-    #! Despues de llamar a la función, la variable intentos está ordenada cuando no debería
+    ordenados = ordenarPorPuntaje(intentos)
 
     print()
     print("Los 5 mejores jugadores son:")
