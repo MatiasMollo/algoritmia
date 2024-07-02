@@ -13,118 +13,96 @@ Al finalizar el juego preguntar si se desea seguir jugando y reiniciarlo
 
 import random
 
-# Se necesita una funcion que copie la lista ya que Python devuelve la posición en memoria
-def copiarLista(lista):
+def copiar(lista):
     array = []
-
     for i in range(len(lista)):
         array.append(lista[i])
-    
+
     return array
 
-#Devuelve una lista con los indices en orden de mayor a menor puntaje
-def ordenarPorPuntaje(items):
-    lista = copiarLista(items)
-    indices = []
+def ordenar(lista):
+    lista = copiar(lista) #Obtiene una nueva lista y no ordena la anterior por la forma en la que python guarda los punteros de memoria
     ordenado = False
-    original = items
-    aux = 0
 
     while not ordenado:
         ordenado = True
-        for i in range(len(lista) - 1):
-            if(lista[i] > lista[i+1]):
+        for i in range(len(lista)-1):
+            if (lista[i] > lista[i+1]):
+                ordenado = False
                 aux = lista[i]
                 lista[i] = lista[i+1]
                 lista[i+1] = aux
-                ordenado = False
-        
-    for i in range(len(lista)):
-        for x in range(len(lista)):
-            if original[x] == lista[i]:
-                indices.append(x)
-
-    return indices
-
-#Devuelve los indices de los participantes que superan el record
-def superaRecord(record,intentos):
-    lista = []
-
-    for i in range(len(intentos)):
-        if(intentos[i] <= record):
-            lista.append(i)
-    
     return lista
 
+def indices(original,lista):
+    array = []
+    for i in range(len(original)):
+        for x in range(len(lista)):
+            if original[i] == lista[x]:
+                array.append(x)
+    return array
+
 #Programa principal
-jugadores = []
-intentos = []
+CIFRAS = 2
 continuar = True
 
-DIGITOS = 2
+jugadores = []
+puntos = []
 
 while continuar:
-    #Jugador se guarda como String 
-    jugador = input("Ingrese su número de documento: ")
+    numero = random.randint(10**(CIFRAS-1),(10**CIFRAS)-1)
+    print("Usted está jugando con un número de",CIFRAS,"cifras")
+    intentos = 0
 
-    jugadores.append(jugador)
-    intentos.append(0)
-    descubierto = False
+    print("Numero:",numero) #! Debug (no forma parte del programa)
 
-    indice = len(intentos) - 1
+    ingreso = int(input("Ingrese su número (-1 para finalizar): "))
 
-    print("Usted está jugando con un número de",DIGITOS,"digitos")
-    aleatorio = random.randint(10**(DIGITOS-1),(10**DIGITOS)-1)
+    while ingreso != -1 and continuar:
+        intentos += 1
+        if numero == ingreso:
+            print("Numero acertado, usted ha utilizado",intentos,"intentos")
 
-    print(aleatorio) #! Debug (no forma parte del programa)
-    numero = int(input("Se ha generado un número, intente adivinarlo o ingrese -1 para finalizar: "))
+            menor = 0
+            for i in range(len(puntos)):
+                if i == 0 or puntos[i] < menor:
+                    menor = puntos[i]
 
-    while numero != -1 and not descubierto:
-        intentos[indice] += 1
-        if numero == aleatorio: 
-            print("¡En número aleatorio era",aleatorio,"felicidades!")
-            descubierto = True
+            if intentos < menor or len(puntos) == 0:
+                jugador = input("Supero record, ingrese su Nro de documento: ")
+                while jugador == '':
+                    jugador = input("Dato incorrecto, intente nuevamente: ")
+                
+                jugadores.append(jugador)
+                puntos.append(intentos)
+
+            seguir = int(input("¿Desea seguir? 1 para SI, otro número para salir: "))
+            ingreso = -1 #Forzamos la salida del bucle mas cercano para que actualice el número a adivinar
+            if seguir != 1:
+                continuar = False
+
         else:
-            if numero > aleatorio:
-                print("El número aleatorio es menor")
+            if numero < ingreso:
+                print("El número es menor")
             else:
-                print("El número aleatorio es mayor")
-            numero = int(input("Ingrese otro número: "))
+                print("El número es mayor")
 
-    if not descubierto:
-        print("Ha finalizado el juego.")
-    else:
-        print("Usted ha utilizado",intentos[indice],"intentos.")
-    
-    print()
-    numero = int(input("Ingrese 1 para cargar otro jugador, presione otro número para salir: "))
-    if numero != 1:
-        continuar = False
-
+            ingreso = int(input("Ingrese su número: "))
+            
+  
 if len(jugadores) > 0:
-    record = int(input("Ingrese la cantidad de intentos del record: "))
-    mejores = superaRecord(record,intentos)
-
-    ordenados = ordenarPorPuntaje(intentos)
+    intentosOrdenados = ordenar(puntos)
+    ordenados = indices(puntos,intentosOrdenados) #Array de indices en orden
 
     print()
-    print("Los 5 mejores jugadores son:")
-    i = 0
-    while i < 5 and i < len(jugadores):
-        print(i + 1,"-",jugadores[ordenados[i]],"con",intentos[ordenados[i]],"intentos")
-        i += 1
-
-    if len(mejores) > 0:
-        print()
-        print("Los jugadores que superan el record son:")   
-        for i in range(len(mejores)):
-            print(i + 1,"-",jugadores[mejores[i]])
+    print("Lista de puntos")
+    recorrido = len(ordenados)
+    if recorrido > 6:
+        recorrido = 6
+    for i in range(recorrido):
+        indice = ordenados[i]
+        print(i+1,jugadores[indice],'con',puntos[indice],'intentos')
 else:
-    print("No se han ingresado jugadores.")
-
-
-
-
-    
+    print("No se han registrado juegos completados")
 
 
